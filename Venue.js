@@ -19,3 +19,4 @@ var venue = {
 };
 //book specific seat chosen
 //display seat
+//empty cart
