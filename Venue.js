@@ -13,7 +13,7 @@ var venue = {
         }
         document.getElementById("seatsAvailo").innerHTML = seatsToBook;
     },
-    SeatAvails: function(seat){ 
+    bookSeat: function(seat){ 
         for (let i=0;i<this.seatsAvail.length;i++){
             if (document.getElementById("seatsAvailSelect").value==this.roomNumbers[i]){
                 this.bookedSeats = this.seatsAvail.splice(i,1).concat(this.bookedSeats);
@@ -21,7 +21,5 @@ var venue = {
                 venue.Displayseats()
             }
         }
-
-    }
     }
 };
