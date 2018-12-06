@@ -13,10 +13,15 @@ var venue = {
         }
         document.getElementById("seatsAvailo").innerHTML = seatsToBook;
     },
-    SeatAvails: function(seat){
-        alert(seat)
+    SeatAvails: function(seat){ 
+        for (let i=0;i<this.seatsAvail.length;i++){
+            if (document.getElementById("seatsAvailSelect").value==this.roomNumbers[i]){
+                this.bookedSeats = this.seatsAvail.splice(i,1).concat(this.bookedSeats);
+                document.getElementById("rmBooked").innerText=this.bookedSeats;
+                venue.Displayseats()
+            }
+        }
+
+    }
     }
 };
-//book specific seat chosen
-//display seat
-//empty cart
