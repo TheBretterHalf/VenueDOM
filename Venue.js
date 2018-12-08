@@ -9,16 +9,16 @@ var venue = {
         var seatsToBook ="";
         for (var i=0; i<venue.seatsAvail.length;i++){
             //need to escape quotes on the following line, research escaping characters and quotes especially
-            seatsToBook +="<button class='dropdown-item funbuttonatag seat' onclick='venue.SeatAvails(" +venue.seatsAvail[i] + ");' value=\'"+venue.seatsAvail[i]+"\'>"+venue.seatsAvail[i]+"</button><br>";
+            seatsToBook +="<button class='dropdown-item funbuttonatag seat' id='this.seatsAvail[i]' onclick='this.SeatAvails(" +this.seatsAvail[i] + ");' value=\'"+this.seatsAvail[i]+"\'>"+this.seatsAvail[i]+"</button><br>";
         }
         document.getElementById("seatsAvailo").innerHTML = seatsToBook;
     },
     bookSeat: function(seat){ 
         for (let i=0;i<this.seatsAvail.length;i++){
-            if (document.getElementById("seatsAvailSelect").value==this.roomNumbers[i]){
+            if (document.getElementById("seatsAvailSelect").value==this.seatsAvail[i]){
                 this.bookedSeats = this.seatsAvail.splice(i,1).concat(this.bookedSeats);
                 document.getElementById("rmBooked").innerText=this.bookedSeats;
-                venue.Displayseats()
+                this.Displayseats()
             }
         }
     }
